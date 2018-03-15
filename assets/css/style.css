@@ -1,0 +1,115 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+html, body {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+small {
+    font-size: 70%;
+}
+
+header {
+    width: 100vw;
+}
+
+header img {
+    width: 100vw;
+    object-fit: cover;
+    height: calc(100vh - 100px);
+}
+
+header h3 {
+    width: 100vw;
+    height: 60px;
+    margin: 20px auto;
+    background: #FFF;
+    font-size: 60px;
+    text-align: center;
+    color: #333;
+}
+
+section.black-pearl {
+    position: relative;
+    background: url(../images/black-pearl.jpg) center no-repeat;
+    background-size: cover;
+    background-position-x: 60%;
+    width: 100vw;
+    height: 1024px;
+}
+
+section.black-pearl .text-bottom {
+    position: absolute;
+    text-align: center;
+    width: 100vw;
+    left: 0;
+    bottom: 40px;
+}
+
+section.black-pearl .text-bottom .cities {
+    text-align: center;
+    color: #FFF;
+    font-size: 50px;
+}
+
+section.black-pearl .text-bottom .paradise {
+    text-align: center;
+    color: #FFF;
+    font-size: 50px;
+}
+
+footer {
+    background: #111;
+    margin-top: 5px;
+    padding: 12px;
+}
+
+footer p {
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    header img {
+        height: 40vh;
+    }
+
+    header h3 {
+        height: 30px;
+        font-size: 22px;
+    }
+
+    section.black-pearl {
+        background-position-x: 53%;
+        height: 800px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    section.black-pearl .text-bottom .cities {
+        font-size: 25px;
+    }
+    
+    section.black-pearl .text-bottom .paradise {
+        font-size: 25px;
+    }
+
+    section.black-pearl {
+        height: 500px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
