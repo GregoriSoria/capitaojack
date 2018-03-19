@@ -56,12 +56,19 @@ section.black-pearl .text-bottom {
 }
 
 section.black-pearl .text-bottom .cities {
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
     text-align: center;
     color: #FFF;
-    font-size: 50px;
+    font-size: 40px;
+}
+
+section.black-pearl .text-bottom .cities span {
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+    font-size: 72px;
 }
 
 section.black-pearl .text-bottom .paradise {
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
     text-align: center;
     color: #FFF;
     font-size: 50px;
@@ -98,11 +105,15 @@ footer p {
 
 @media screen and (max-width: 640px) {
     section.black-pearl .text-bottom .cities {
-        font-size: 25px;
+        font-size: 22px;
+    }
+
+    section.black-pearl .text-bottom .cities span {
+        font-size: 38px;
     }
     
     section.black-pearl .text-bottom .paradise {
-        font-size: 25px;
+        font-size: 40px;
     }
 
     section.black-pearl {
