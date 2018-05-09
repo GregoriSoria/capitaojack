@@ -188,6 +188,7 @@ footer .essay .small-info {
     }
 
     footer {
+        text-align: center;
         padding: 10px;
     }
 }
