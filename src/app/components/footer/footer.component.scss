@@ -59,13 +59,18 @@
         footer {
             padding: 20px 40px;
 
-            .countries, footer .essay {
+            .countries {
                 margin-top: 10px;
                 width: 100%;
             }
 
-            .essay .info {
-                font-size: 13px;
+            .essay {
+                margin-top: 10px;
+                width: 100%;
+
+                .info {
+                    font-size: 13px;
+                }
 
                 .medium-info {
                     font-size: 11px;
@@ -82,6 +87,12 @@
         footer {
             text-align: center;
             padding: 10px;
+
+            .countries {
+                .flags {
+                    margin-top: 10px;
+                }
+            }
         }
     }
 }
