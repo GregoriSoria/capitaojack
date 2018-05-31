@@ -1,0 +1,87 @@
+:host {
+    footer {
+        background: #111;
+        margin-top: 5px;
+        padding: 40px 80px;
+
+        p {
+            color: #FFF;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .countries {
+            position: relative;
+            font-weight: 300;
+            float: left;
+            width: 78%;
+
+            .edition {
+                margin-top: 16px;
+                font-size: 13px;
+            }
+
+            .flags img {
+                height: 26px;
+                margin-right: 5px;
+            }
+        }
+
+        .essay {
+            position: relative;
+            float: right;
+            width: 20%;
+            color: #FFF;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+
+            .essay-info {
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+
+            .info {
+                font-size: 15px;
+            }
+
+            .medium-info {
+                margin-top: 20px;
+                font-size: 13px;
+            }
+
+            .small-info {
+                font-size: 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        footer {
+            padding: 20px 40px;
+
+            .countries, footer .essay {
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .essay .info {
+                font-size: 13px;
+
+                .medium-info {
+                    font-size: 11px;
+                }
+
+                .small-info {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        footer {
+            text-align: center;
+            padding: 10px;
+        }
+    }
+}
