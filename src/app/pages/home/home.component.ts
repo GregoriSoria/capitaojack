@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public typerText: String = "Jornal, Revista e Informativo Turístico";
+
   constructor() { }
 
   ngOnInit() {

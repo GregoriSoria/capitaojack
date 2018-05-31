@@ -1,4 +1,11 @@
 :host {
+    .typer {
+        height: 1.1em;
+        box-sizing: content-box;
+        padding: 10px 5px;
+        color: #cc3300;
+        font-weight: bold;
+    }
     header {
         width: 100vw;
 
