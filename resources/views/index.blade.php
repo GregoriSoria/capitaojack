@@ -2,7 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
-    <title>Capitão Jack</title>
+    <title>{{ setting('site.title') }}</title>
     <base href="/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,11 +10,11 @@
 
     <meta property="fb:app_id" content="448917015563679">
     <meta property="og:url" content="http://capitaojack.com.br">
-    <meta property="og:title" content="{{ $ogTitle}}">
+    <meta property="og:title" content="{{ setting('site.title') }}">
     <meta property="og:site_name" content="{{ $ogSiteName }}">
-    <meta property="og:description" content="{{ $ogDescription }}">
-    <meta property="og:image" content="{{ $ogImage }}">
-    <meta property="og:image:type" content="{{ $ogImageType }}">
+    <meta property="og:description" content="{{ setting('site.description') }}">
+    <meta property="og:image" content="{{ App::make('url')->to('/') . '/storage/app/public/' . setting('site.logo') }}">
+    <meta property="og:image:type" content="{{ setting('site.logo_type') }}">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="600">
     <meta property="og:locale" content="pt_BR">
