@@ -10,6 +10,7 @@ export class TyperEffectComponent implements OnInit {
   @Input('text') inputText: String;
   @Input('speed') inputSpeed: number;
   @Input('startAfter') inputStartAfter: number;
+  @Input('repeat') inputRepeat: number;
   text: String = '';
 
   constructor() { }
@@ -27,6 +28,13 @@ export class TyperEffectComponent implements OnInit {
         this.typer(i+1, str);
       } else {
         this.text = this.inputText;
+
+        if (this.inputRepeat) {
+          setTimeout(() => {
+            this.text = '';
+            this.typer(0, this.inputText);
+          }, this.inputRepeat);
+        }
       }
     }, this.inputSpeed);
   }

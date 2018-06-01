@@ -12,5 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index', [
+        'ogTitle' => 'Capitão Jack',
+        'ogSiteName' => 'http://capitaojack.com.br',
+        'ogDescription' => 'Porto Belo e Bombinhas. Paraíso o Ano Todo',
+        'ogImage' => 'http://capitaojack.com.br/assets/images/header.jpg',
+        'ogImageType' => 'image/jpeg',
+        'seoH1' => 'Capitão Jack',
+        'seoH2' => 'O Paraíso Que Escolhi',
+        'seoP' => 'Porto Belo e Bombinhas. Paraíso o Ano Todo',
+    ]);
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });

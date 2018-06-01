@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,QSA,NC,L]
+    RewriteEngine On
+
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Habilitar o PHP 7.1
+AddHandler application/x-httpd-php71 .php
+<IfModule mod_suphp.c>
+    suPHP_ConfigPath  /home/capit428/php.ini
+</IfModule>
