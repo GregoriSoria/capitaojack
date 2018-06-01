@@ -26,12 +26,12 @@
   <h2 style="color:white">{{ $seoH2 }}</h2>
   <p style="color:white">{{ $seoP }}</p>
 </app-root>
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('admin.google_analytics_client_id') }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('admin.google_analytics_tracking_id') }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '{{ setting('admin.google_analytics_client_id') }}');
+  gtag('config', "{{ setting('admin.google_analytics_tracking_id') }}");
 </script>
 </html>

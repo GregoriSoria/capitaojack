@@ -29,12 +29,12 @@
 </app-root>
 <script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="main.js"></script></body>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('admin.google_analytics_client_id') }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('admin.google_analytics_tracking_id') }}"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', '{{ setting('admin.google_analytics_client_id') }}');
+    gtag('config', "{{ setting('admin.google_analytics_tracking_id') }}");
 </script>
 </html>
