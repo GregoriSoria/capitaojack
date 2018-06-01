@@ -13,7 +13,7 @@
     <meta property="og:title" content="{{ setting('site.title') }}">
     <meta property="og:site_name" content="{{ $ogSiteName }}">
     <meta property="og:description" content="{{ setting('site.description') }}">
-    <meta property="og:image" content="{{ App::make('url')->to('/') . '/storage/app/public/' . setting('site.logo') }}">
+    <meta property="og:image" content="{{ App::make('url')->to('/') . '/public/storage/' . setting('site.logo') }}">
     <meta property="og:image:type" content="{{ setting('site.logo_type') }}">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="600">
