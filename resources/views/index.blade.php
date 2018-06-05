@@ -35,6 +35,6 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', "{{ setting('admin.google_analytics_tracking_id') }}");
+    gtag('config', "{{ setting('site.google_analytics_tracking_id') }}");
 </script>
 </html>
