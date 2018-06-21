@@ -1,4 +1,53 @@
 :host {
+    .slider {
+        margin: 25px 0;
+
+        .slide {
+            position: relative;
+            padding: 0 20px;
+            outline: 0;
+            text-align: center;
+            cursor: pointer;
+            
+            img {
+                display: inline-block;
+                width: auto;
+                height: 60px;
+                pointer-events: none;
+                border-radius: 3px;
+                box-shadow: 0px 0px 15px 0px rgba(204,51,0,0);
+                transition: box-shadow 0.3s ease-in-out;
+
+                &.hover {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(1);
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            &.slick-current {
+                img {
+                    box-shadow: 0px 0px 15px 0px rgba(204,51,0,1);
+                }
+            }
+
+            @media (min-width: 1024px) {
+                &:hover {
+                    img {
+                        box-shadow: 0px 0px 15px 0px rgba(204,51,0,1);
+                        
+                        &.hover {
+                            box-shadow: 0px 0px 10px 0px rgba(231,166,26,1);
+                            top: 400%;
+                            transform: translate(-50%, -50%) scale(4);
+                        }
+                    }
+                }
+            }
+        }
+    }
     .typer {
         height: 1.1em;
         box-sizing: content-box;
@@ -13,6 +62,12 @@
             width: 100vw;
             object-fit: cover;
             height: calc(100vh - 100px - 37.59px);
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+
+            &.loading {
+                opacity: 0;
+            }
         }
         
         h3 {
@@ -29,7 +84,7 @@
     
     section.black-pearl {
         position: relative;
-        background: url('src/assets/images/black-pearl.jpg') center no-repeat;
+        background: url('src/assets/images/porto-belo-cantao.jpeg') center no-repeat;
         background-size: cover;
         background-position-x: 60%;
         width: 100vw;
@@ -40,17 +95,17 @@
             text-align: center;
             width: 100vw;
             left: 0;
-            bottom: 40px;
+            top: 20px;
 
             .cities {
                 text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
                 text-align: center;
                 color: #FFF;
-                font-size: 40px;
+                font-size: 25px;
 
                 span {
                     text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
-                    font-size: 72px;
+                    font-size: 62px;
                 }
             }
 
@@ -58,7 +113,7 @@
                 text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
                 text-align: center;
                 color: #FFF;
-                font-size: 50px;
+                font-size: 62px;
             }
         }
     }

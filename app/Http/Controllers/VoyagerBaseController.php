@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Field;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Events\BreadDataUpdated;

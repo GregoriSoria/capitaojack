@@ -1,8 +1,14 @@
+<ngx-slick class="slider" #slickModal="slick-modal" [config]="slideConfig" (beforeChange)="beforeChange($event)" (afterChange)="afterChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides; let i = index" class="slide" (click)="slideClick(i)">
+        <img src="{{ slide.img }}" width="100%">
+        <img src="{{ slide.img }}" class="hover" width="100%">
+    </div>
+</ngx-slick>
 <div class="typer">
   <app-typer-effect [text]="typerText" [speed]="46" [startAfter]="2000" [repeat]="5000"></app-typer-effect>
 </div>
 <header>
-    <img src="assets/images/header.jpg" alt="capitaojack capitao jack">
+    <img [src]="activeImage" alt="capitaojack capitao jack" [class.loading]="loadingSlide">
     <h3>O Paraíso Que Escolhi</h3>
 </header>
 <section class="black-pearl">

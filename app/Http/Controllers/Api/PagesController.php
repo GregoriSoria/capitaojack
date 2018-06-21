@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class PagesController extends Controller
 {
@@ -25,7 +26,15 @@ class PagesController extends Controller
         if ($page) {
             $pageFields = Field::where('page_id', $page->id)->get();
             foreach ($pageFields as $field) {
-                $page->{$field->name} = $field->value;
+                if ($field->type == 'multiple_images') {
+                    $images = json_decode($field->value, true);
+                    foreach ($images as $key => $image) {
+                        $images[$key] = URL::to('/storage') . '/' . $image;
+                    }
+                    $page->{$field->name} = $images;
+                } else {
+                    $page->{$field->name} = $field->value;
+                }
             }
 
 
