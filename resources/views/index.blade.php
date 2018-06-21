@@ -22,19 +22,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<app-root>
-    <h1 style="color:white">{{ $seoH1 }}</h1>
-    <h2 style="color:white">{{ $seoH2 }}</h2>
-    <p style="color:white">{{ $seoP }}</p>
-</app-root>
-<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="main.js"></script></body>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('admin.google_analytics_tracking_id') }}"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <app-root>
+        <h1 style="color:white">{{ $seoH1 }}</h1>
+        <h2 style="color:white">{{ $seoH2 }}</h2>
+        <p style="color:white">{{ $seoP }}</p>
+    </app-root>
+    <script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('admin.google_analytics_tracking_id') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    gtag('config', "{{ setting('site.google_analytics_tracking_id') }}");
-</script>
+        gtag('config', "{{ setting('site.google_analytics_tracking_id') }}");
+    </script>
+</body>
 </html>

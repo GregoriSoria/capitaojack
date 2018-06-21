@@ -21,17 +21,18 @@
   <meta property="og:type" content="website">
 </head>
 <body>
-<app-root>
-  <h1 style="color:white">{{ $seoH1 }}</h1>
-  <h2 style="color:white">{{ $seoH2 }}</h2>
-  <p style="color:white">{{ $seoP }}</p>
-</app-root>
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('admin.google_analytics_tracking_id') }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', "{{ setting('admin.google_analytics_tracking_id') }}");
-</script>
+  <app-root>
+    <h1 style="color:white">{{ $seoH1 }}</h1>
+    <h2 style="color:white">{{ $seoH2 }}</h2>
+    <p style="color:white">{{ $seoP }}</p>
+  </app-root>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('admin.google_analytics_tracking_id') }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', "{{ setting('admin.google_analytics_tracking_id') }}");
+  </script>
+</body>
 </html>

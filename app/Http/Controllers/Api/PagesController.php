@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {
-    public function findBySlug(Request $request, $slug) {
+    public function findBySlug(Request $request, $slug = '') {
         $page = DB::table('pages')
             ->where('slug', $slug)
             ->first([
@@ -28,11 +28,12 @@ class PagesController extends Controller
                 $page->{$field->name} = $field->value;
             }
 
+
             return new JsonResponse($page, 200, ['Content-type'=> 'application/json; charset=utf-8'], JSON_UNESCAPED_UNICODE);
         } else {
             return new JsonResponse([
                 'error' => [
-                    'message' => 'Página "' . $slug . '"não encontrado'
+                    'message' => 'Página "' . $slug . '" não encontrada'
                 ]
             ], 204, ['Content-type'=> 'application/json; charset=utf-8'], JSON_UNESCAPED_UNICODE);
         }
