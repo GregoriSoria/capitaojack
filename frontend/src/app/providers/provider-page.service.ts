@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class PageProvider {
 
-  private apiUrl = 'http://localhost/api';
+  private apiUrl = 'api';
 
   constructor(public http: HttpClient) {
     console.log('Hello PageProvider');

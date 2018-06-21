@@ -9,7 +9,7 @@ import { PageProvider } from '../../providers/provider-page.service';
 export class HomeComponent implements OnInit {
 
   public typerText: String = "";
-  private slideConfig = {
+  slideConfig = {
     slidesToShow: 4,
     slidesToScroll: 1,
     focusOnSelect: true,
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   };
 
   // min 5 slides
-  private slides = [];
+  slides = [];
   loadingSlide = false;
   activeImage = 'assets/images/header.jpg';
 

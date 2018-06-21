@@ -1,4 +1,4 @@
-<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="main.js"></script><!doctype html>
+<!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
   <meta charset="utf-8">
@@ -35,8 +35,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
+    
     gtag('config', "{{ setting('admin.google_analytics_tracking_id') }}");
   </script>
-</body>
+<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="main.js"></script></body>
 </html>
