@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
     pauseOnHover: false
   };
 
+  navActive = false;
+
   // min 5 slides
   slides = [];
   loadingSlide = false;
@@ -50,15 +52,13 @@ export class HomeComponent implements OnInit {
   }
 
   activeSlide(index: number) {
-    this.activeImage = this.slides[index].img;
+    this.activeImage = this.slides[index].imagem_principal;
   }
 
   ngOnInit() {
     this.pageProvider.getPage('principal').then(page => {
       this.typerText = page.texto_animado;
-      for (let i = 0; i < page.principal_header_slider.length; i++ )  {
-        this.slides.push({img: page.principal_header_slider[i]});
-      }
+      this.slides = page.slide_superior;
     });
   }
 
