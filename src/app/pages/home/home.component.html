@@ -12,7 +12,7 @@
     <h3 class="franklin">O Paraíso Que Escolhi</h3>
 </header>
 <section class="black-pearl">
-    <div class="menu" [class.active]="navActive">
+    <div class="menu" [class.active]="navActive" (mouseenter)="navActive = true">
         <span class="text">{{ navActive ? 'FECHAR' : 'ABRIR' }} MENU</span>
         <span class="open-nav" (click)="navActive = !navActive">
             <span class="triangle"></span>

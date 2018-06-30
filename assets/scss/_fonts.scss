@@ -27,3 +27,17 @@
 .komika {
     font-family: 'Komika Axis', 'Helvetica', 'Arial';
 }
+
+@font-face {
+    font-family: 'Franklin Gothic Demi';
+    src: url('assets/fonts/FranklinGothic-Demi.eot');
+    src: url('assets/fonts/FranklinGothic-Demi.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/FranklinGothic-Demi.woff2') format('woff2'),
+        url('assets/fonts/FranklinGothic-Demi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.franklin {
+    font-family: 'Franklin Gothic Demi', 'Helvetica', 'Arial';
+}
