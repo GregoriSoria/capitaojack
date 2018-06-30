@@ -10,15 +10,25 @@ export class HomeComponent implements OnInit {
 
   public typerText: String = "";
   slideConfig = {
-    slidesToShow: 4,
+    lazyLoad: 'ondemand',
+    slidesToShow: 3,
     slidesToScroll: 1,
-    focusOnSelect: true,
+    focusOnSelect: false,
     variableWidth: true,
+    infinite: true,
     swipe: false,
     autoplay: true,
     autoplaySpeed: 5000,
     pauseOnFocus: false,
-    pauseOnHover: false
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 4
+        }
+      }
+    ]
   };
 
   navActive = false;
@@ -59,6 +69,7 @@ export class HomeComponent implements OnInit {
     this.pageProvider.getPage('principal').then(page => {
       this.typerText = page.texto_animado;
       this.slides = page.slide_superior;
+      this.slideConfig.slidesToShow = this.slides.length-1;
     });
   }
 
