@@ -8,6 +8,7 @@ export class PageProvider {
   private apiUrl = environment.apiUrl + '/wp-admin/admin-ajax.php?action=';
 
   constructor(public http: HttpClient) {
+    console.log('Environment: ', environment.apiUrl);
   }
 
   public getPage(slug): Promise<any> {
