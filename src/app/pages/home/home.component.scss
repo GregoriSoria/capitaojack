@@ -93,20 +93,18 @@
             &.only-text, &.only-image {
                 justify-content: center;
 
-                .negative-text {
-                    margin-top: 20px;
-                }
             }
-
+            
             @media (min-width: 768px) {
                 display: flex;
             }
-
+            
             .negative-text {
                 text-align: center;
                 color: #FFF;
                 font-weight: 500;
                 font-size: 34px;
+                margin-top: 20px;
             }
         }
     }
