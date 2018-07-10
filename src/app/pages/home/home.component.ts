@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
   // min 5 slides
   slides = [];
   loadingSlide = false;
-  activeImage = 'assets/images/header.jpg';
+  activeIndex = 0;
 
   constructor(private pageProvider: PageProvider) { }
 
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
   }
 
   activeSlide(index: number) {
-    this.activeImage = this.slides[index].imagem_principal;
+    this.activeIndex = index;
   }
 
   ngOnInit() {

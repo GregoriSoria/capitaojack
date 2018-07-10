@@ -18,7 +18,7 @@
     <meta property="og:title" content="Capitão Jack">
     <meta property="og:site_name" content="http://capitaojack.com.br">
     <meta property="og:description" content="Porto Belo e Bombinhas. Paraíso o Ano Todo">
-    <meta property="og:image" content="http://capitaojack.com.br/wp-content/themes/angular/assets/images/header.jpg">
+    <meta property="og:image" content="http://capitaojack.com.br/wp-content/uploads/2018/06/header.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="600">
