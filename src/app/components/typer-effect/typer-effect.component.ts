@@ -13,7 +13,9 @@ export class TyperEffectComponent implements OnInit, OnChanges {
   @Input('startAfter') inputStartAfter: number;
   @Input('repeat') inputRepeat: number;
   fullText: String = '';
+  fullTextLength: number = 0;
   text: String = '';
+  timeout: any;
 
   constructor() { }
 
@@ -25,8 +27,10 @@ export class TyperEffectComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: any) {
     console.log(changes);
-    if (window.screen.width <= 767) {
+    if (changes && window.screen.width <= 767) {
       if (changes.inputMobileText.currentValue || (changes.inputMobileText.previousValue != 'Jornal, Revista e Informativo Turístico' && !changes.inputMobileText.currentValue)) {
+        clearTimeout(this.timeout);
+        this.fullTextLength = 0;
         this.start(0);
       }
     }
@@ -39,9 +43,11 @@ export class TyperEffectComponent implements OnInit, OnChanges {
       this.fullText = this.inputMobileText || this.inputText;
     }
     setTimeout(() => {
-      this.text = this.fullText.substring(0, i+1) + '_';
-      if (i < this.fullText.length) {
-        this.typer(i+1, str);
+      console.log(this.text);
+      this.fullTextLength++;
+      this.text = this.fullText.substring(0, this.fullTextLength-1) + '_';
+      if (this.fullTextLength-1 < this.fullText.length) {
+        this.typer(this.fullTextLength, str);
       } else {
         this.text = this.fullText;
 

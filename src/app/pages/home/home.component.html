@@ -8,8 +8,8 @@
 <div class="typer" *ngIf="slides && slides.length && slides[activeIndex]">
     <app-typer-effect [text]="typerText" [mobileText]="slides[activeIndex].texto_slide" [speed]="46" [startAfter]="2000" [repeat]="5000"></app-typer-effect>
 </div>
-<header>
-    <img [src]="slides[activeIndex].imagem_principal || 'assets/images/header.jpg'" alt="capitaojack capitao jack" class="active-image" [ngClass]="{ 'loading': loadingSlide, 'has-negative': (slides[activeIndex].imagem_interna || slides[activeIndex].texto_slide) && !slides[activeIndex].esconder_negativo }">
+<header *ngIf="slides && slides.length && slides[activeIndex]">
+    <img [src]="slides[activeIndex].imagem_principal || 'assets/images/header.jpg'" alt="capitaojack slide" class="active-image" [ngClass]="{ 'loading': loadingSlide, 'has-negative': (slides[activeIndex].imagem_interna || slides[activeIndex].texto_slide) && !slides[activeIndex].esconder_negativo }">
     <div class="negative-content" *ngIf="(slides[activeIndex].imagem_interna || slides[activeIndex].texto_slide) && !slides[activeIndex].esconder_negativo" [ngClass]="{ 'only-image': !slides[activeIndex].texto_slide, 'only-text': !slides[activeIndex].imagem_interna }">
         <img [src]="slides[activeIndex].imagem_interna" class="negative-image" *ngIf="slides[activeIndex].imagem_interna">
         <div class="negative-text franklin" *ngIf="slides[activeIndex].texto_slide" [innerHtml]="slides[activeIndex].texto_slide"></div>
