@@ -20,9 +20,28 @@
     <meta property="og:locale" content="pt_BR">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #111;
+            z-index: 999;
+        }
+
+        .loader img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-65%, -60%);
+        }
+    </style>
 <link rel="stylesheet" href="styles.css"></head>
 <body>
     <app-root>
+        <div class="loader"><img src="assets/images/loading.gif" alt="capitaojack loader"></div>
         <h1 style="color:white">Capitão Jack</h1>
         <h2 style="color:white">Paraíso</h2>
         <p style="color:white">Porto Belo e Bombinhas. Paraíso o Ano Todo</p>

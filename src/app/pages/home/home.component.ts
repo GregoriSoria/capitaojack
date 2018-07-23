@@ -11,14 +11,15 @@ export class HomeComponent implements OnInit {
   public typerText: String = "";
   slideConfig = {
     lazyLoad: 'ondemand',
+    centerMode: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    focusOnSelect: false,
+    focusOnSelect: true,
     variableWidth: true,
     infinite: true,
-    swipe: false,
+    swipe: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 6000,
     pauseOnFocus: false,
     pauseOnHover: false,
     responsive: [

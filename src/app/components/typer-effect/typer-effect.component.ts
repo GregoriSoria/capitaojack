@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-typer-effect',
   templateUrl: './typer-effect.component.html',
   styleUrls: ['./typer-effect.component.scss']
 })
-export class TyperEffectComponent implements OnInit {
+export class TyperEffectComponent implements OnInit, OnChanges {
 
   @Input('text') inputText: String;
   @Input('mobileText') inputMobileText: String;
@@ -19,13 +19,17 @@ export class TyperEffectComponent implements OnInit {
 
   ngOnInit() {
     if (window.screen.width >= 768) {
-      this.fullText = this.inputText;
-    } else {
-      this.fullText = this.inputMobileText || this.inputText;
+      this.start(this.inputStartAfter);
     }
-    setTimeout(() => {
-      this.typer(0, this.fullText);
-    },this.inputStartAfter);
+  }
+
+  ngOnChanges(changes: any) {
+    console.log(changes);
+    if (window.screen.width <= 767) {
+      if (changes.inputMobileText.currentValue || (changes.inputMobileText.previousValue != 'Jornal, Revista e Informativo Turístico' && !changes.inputMobileText.currentValue)) {
+        this.start(0);
+      }
+    }
   }
 
   typer(i: number = 0, str: String) {
@@ -47,14 +51,20 @@ export class TyperEffectComponent implements OnInit {
             this.typer(0, this.fullText);
           }, this.inputRepeat);
         }
-
-        if (window.screen.width <= 767) {
-          setInterval(() => {
-            this.text = this.inputMobileText || this.inputText;
-          }, 500);
-        }
       }
     }, this.inputSpeed);
+  }
+
+  start(startAfter: number) {
+    this.text = '';
+    if (window.screen.width >= 768) {
+      this.fullText = this.inputText;
+    } else {
+      this.fullText = this.inputMobileText || this.inputText;
+    }
+    setTimeout(() => {
+      this.typer(0, this.fullText);
+    },startAfter);
   }
 
 }

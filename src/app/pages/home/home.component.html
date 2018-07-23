@@ -1,3 +1,4 @@
+<div class="loader" *ngIf="!slides || !slides.length || !slides[activeIndex]"><img src="assets/images/loading.gif" alt="capitaojack loader"></div>
 <ngx-slick class="slider" #slickModal="slick-modal" [config]="slideConfig" (beforeChange)="beforeChange($event)" (afterChange)="afterChange($event)">
     <div ngxSlickItem *ngFor="let slide of slides; let i = index" class="slide" (click)="slideClick(i)">
         <img src="{{ slide.imagem_principal }}" width="100%">
@@ -7,7 +8,7 @@
 <div class="typer" *ngIf="slides && slides.length && slides[activeIndex]">
     <app-typer-effect [text]="typerText" [mobileText]="slides[activeIndex].texto_slide" [speed]="46" [startAfter]="2000" [repeat]="5000"></app-typer-effect>
 </div>
-<header *ngIf="slides && slides.length">
+<header>
     <img [src]="slides[activeIndex].imagem_principal || 'assets/images/header.jpg'" alt="capitaojack capitao jack" class="active-image" [ngClass]="{ 'loading': loadingSlide, 'has-negative': (slides[activeIndex].imagem_interna || slides[activeIndex].texto_slide) && !slides[activeIndex].esconder_negativo }">
     <div class="negative-content" *ngIf="(slides[activeIndex].imagem_interna || slides[activeIndex].texto_slide) && !slides[activeIndex].esconder_negativo" [ngClass]="{ 'only-image': !slides[activeIndex].texto_slide, 'only-text': !slides[activeIndex].imagem_interna }">
         <img [src]="slides[activeIndex].imagem_interna" class="negative-image" *ngIf="slides[activeIndex].imagem_interna">
