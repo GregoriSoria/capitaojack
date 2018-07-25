@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PageProvider } from '../../providers/provider-page.service';
 
 @Component({
@@ -9,15 +9,16 @@ import { PageProvider } from '../../providers/provider-page.service';
 export class HomeComponent implements OnInit {
 
   public typerText: String = "";
+  @ViewChild('slickModal') slickModal: any;
   slideConfig = {
     lazyLoad: 'ondemand',
     centerMode: true,
     slidesToShow: 3,
-    slidesToScroll: 1,
     focusOnSelect: true,
     variableWidth: true,
     infinite: true,
     swipe: true,
+    swipeToSlide: true,
     autoplay: true,
     autoplaySpeed: 6000,
     pauseOnFocus: false,
@@ -71,6 +72,7 @@ export class HomeComponent implements OnInit {
       this.typerText = page.texto_animado;
       this.slides = page.slide_superior;
       this.slideConfig.slidesToShow = this.slides.length-1;
+      this.slickModal.slickGoTo(0);
     });
   }
 
