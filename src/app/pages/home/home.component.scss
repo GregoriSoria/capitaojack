@@ -92,7 +92,11 @@
 
             &.only-text, &.only-image {
                 justify-content: center;
+            }
 
+            img {
+                width: 100%;
+                height: auto;
             }
             
             @media (min-width: 768px) {
