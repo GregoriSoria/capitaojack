@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
   slideConfig = {
     lazyLoad: 'ondemand',
     centerMode: true,
-    slidesToShow: 3,
+    slidesToShow: 8,
+    initialSlide: 0,
     focusOnSelect: true,
     variableWidth: true,
     infinite: true,
@@ -72,7 +73,6 @@ export class HomeComponent implements OnInit {
       this.typerText = page.texto_animado;
       this.slides = page.slide_superior;
       this.slideConfig.slidesToShow = this.slides.length-1;
-      this.slickModal.slickGoTo(0);
     });
   }
 
