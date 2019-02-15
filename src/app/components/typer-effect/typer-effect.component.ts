@@ -8,7 +8,6 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 export class TyperEffectComponent implements OnInit, OnChanges {
 
   @Input('text') inputText: String;
-  @Input('mobileText') inputMobileText: String;
   @Input('speed') inputSpeed: number;
   @Input('startAfter') inputStartAfter: number;
   @Input('repeat') inputRepeat: number;
@@ -20,15 +19,13 @@ export class TyperEffectComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
-    if (window.screen.width >= 768) {
-      this.start(this.inputStartAfter);
-    }
+
   }
 
   ngOnChanges(changes: any) {
     console.log(changes);
-    if (changes && window.screen.width <= 767) {
-      if (changes.inputMobileText.currentValue || (changes.inputMobileText.previousValue != 'Jornal, Revista e Informativo Turístico' && !changes.inputMobileText.currentValue)) {
+    if (changes) {
+      if (changes.inputText.currentValue || (changes.inputText.previousValue != 'Jornal, Revista e Informativo Turístico' && !changes.inputText.currentValue)) {
         clearTimeout(this.timeout);
         this.fullTextLength = 0;
         this.start(0);
@@ -37,11 +34,8 @@ export class TyperEffectComponent implements OnInit, OnChanges {
   }
 
   typer(i: number = 0, str: String) {
-    if (window.screen.width >= 768) {
-      this.fullText = this.inputText;
-    } else {
-      this.fullText = this.inputMobileText || this.inputText;
-    }
+    this.fullText = this.inputText;
+
     setTimeout(() => {
       console.log(this.text);
       this.fullTextLength++;
@@ -50,24 +44,14 @@ export class TyperEffectComponent implements OnInit, OnChanges {
         this.typer(this.fullTextLength, str);
       } else {
         this.text = this.fullText;
-
-        if (this.inputRepeat && window.screen.width >= 768) {
-          setTimeout(() => {
-            this.text = '';
-            this.typer(0, this.fullText);
-          }, this.inputRepeat);
-        }
       }
     }, this.inputSpeed);
   }
 
   start(startAfter: number) {
     this.text = '';
-    if (window.screen.width >= 768) {
-      this.fullText = this.inputText;
-    } else {
-      this.fullText = this.inputMobileText || this.inputText;
-    }
+    this.fullText = this.inputText;
+
     setTimeout(() => {
       this.typer(0, this.fullText);
     },startAfter);
